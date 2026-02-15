@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:transparent;
+color:#fff;
+padding:10px;
+min-width:350px;
+}
+
+.overlay-container{
+background:rgba(0,0,0,0.7);
+border-radius:15px;
+padding:15px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.overlay-header{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+padding-bottom:10px;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.live-badge{
+background:#ff0000;
+color:#fff;
+padding:3px 10px;
+border-radius:5px;
+font-size:12px;
+font-weight:700;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%,100%{opacity:1;}
+50%{opacity:0.7;}
+}
+
+.header-text{
+font-size:16px;
+font-weight:600;
+color:#00ffe7;
+}
+
+.overlay-list{
+max-height:300px;
+overflow-y:auto;
+}
+
+.overlay-item{
+background:linear-gradient(135deg,rgba(0,255,231,0.15),rgba(255,0,255,0.15));
+border-radius:10px;
+padding:12px;
+margin-bottom:10px;
+display:flex;
+align-items:center;
+gap:12px;
+animation:slideIn 0.5s ease-out;
+border-left:3px solid #00ffe7;
+}
+
+@keyframes slideIn{
+from{
+opacity:0;
+transform:translateX(-20px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+.overlay-item.new{
+animation:slideIn 0.5s ease-out,highlight 1s ease-out;
+}
+
+@keyframes highlight{
+0%{background:linear-gradient(135deg,rgba(0,255,231,0.5),rgba(255,0,255,0.5));}
+100%{background:linear-gradient(135deg,rgba(0,255,231,0.15),rgba(255,0,255,0.15));}
+}
+
+.item-amount{
+font-size:20px;
+font-weight:700;
+color:#00ffe7;
+min-width:60px;
+}
+
+.item-details{
+flex:1;
+}
+
+.item-name{
+font-weight:600;
+font-size:14px;
+color:#fff;
+margin-bottom:2px;
+}
+
+.item-message{
+font-size:12px;
+color:rgba(255,255,255,0.7);
+font-style:italic;
+}
+
+.item-time{
+font-size:10px;
+color:rgba(255,255,255,0.5);
+}
+
+.overlay-footer{
+margin-top:10px;
+padding-top:10px;
+border-top:1px solid rgba(255,255,255,0.2);
+text-align:center;
+font-size:14px;
+color:#ff00ff;
+font-weight:600;
+}
+
+/* Scrollbar styling */
+.overlay-list::-webkit-scrollbar{
+width:5px;
+}
+
+.overlay-list::-webkit-scrollbar-track{
+background:rgba(255,255,255,0.1);
+border-radius:5px;
+}
+
+.overlay-list::-webkit-scrollbar-thumb{
+background:#00ffe7;
+border-radius:5px;
+}
